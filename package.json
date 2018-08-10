@@ -1,0 +1,27 @@
+{
+  "name": "weekendchallenge_3",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "express": "^4.16.3",
+    "expresss": "^0.0.0",
+    "mongo": "^0.1.0",
+    "mongoose": "^5.2.7"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Aomar18/weekendChallenge_3.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Aomar18/weekendChallenge_3/issues"
+  },
+  "homepage": "https://github.com/Aomar18/weekendChallenge_3#readme"
+}
