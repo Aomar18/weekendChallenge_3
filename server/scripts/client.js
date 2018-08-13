@@ -8,7 +8,36 @@ const toDoApp =  angular.module('taskController' , [] );
 taskApp.controller('taskController' , function($http){
 console.log('taskController set up')
 const tc = this;
-tc.tasks = [];
-});
+tc.listofTasks = [];
 
+//ADD TASK FUNCTION 
+tc.addTask = function(taskToAdd){
+    consoe.log('in add funk');
+    console.log('add task' itemToAdd);
+    $http({
+        method:'POST',
+        url:'/task' ,
+        data:itemToAd
+    }).then(function(response){
+        console.log(itemToAdd);
+        getTasks();
+    }).catch(function(error){
+        console.log('error in add funk' , error)
+        alert('unable to post');
+    });
+}// end add task funk
+
+//GET FUNCTION
+function getTasks(){
+    console.log('in get funk');
+    $http({
+        
+    })
+}
+
+
+
+
+
+});
 
