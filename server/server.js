@@ -12,8 +12,8 @@ const mongoURI = 'mongodb://localhost:27017/tasklist';
 
 //uses
 app.use(bodyParser.json()); // AngularJS
-app.use('/task', taskRouter);
 app.use(express.static('server/public'));
+app.use('/task', taskRouter);
 
 // CONNECT TO MONGO
 mongoose.connect(mongoURI, { useNewUrlParser: true });

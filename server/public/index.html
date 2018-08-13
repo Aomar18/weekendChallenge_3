@@ -21,7 +21,7 @@
     <div id="container" ng-controller="taskController as tc">
         <form ng-submit="tc.addTask(tc.taskToAdd)">
             <p>Enter Task:</p>
-            <p> checkbox if complete.. press remove if task unwanted.</p>
+            <p> press complete if task is done.. press remove if task unwanted.</p>
             <input type="text" ng-model="tc.taskToAdd.taskIn" placeholder="What task needs to be done?" />
             <button id="submit-btn" type="submit">Submit</button>
         </form>
@@ -30,11 +30,12 @@
 
         <div class="secondContainer">
             <ul id="list">
-                <li ng-repeat="task in tc.listTasks" ng-class="task.active ? 'active' : 'complete' ">
+                <li ng-repeat="task in tc.listTasks" ng-class="task.taskDone ? 'complete' : 'active'"/>
                 
                     {{task.taskIn}}
-                    <button ng-class="task-completed" ng-click="tc.taskDone(task._id)">COMPLETE!</button>
+                    <button ng-class="task-complete" ng-click="tc.taskDone(task._id)">COMPLETE!</button>
                     <button ng-class="task-delete" ng-click="tc.removeTask(task._id)">Remove</button>
+               
                 </li>
 
 

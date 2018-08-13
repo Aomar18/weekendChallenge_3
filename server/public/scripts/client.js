@@ -21,7 +21,6 @@ tc.addTask = function(taskToAdd){
         data: taskToAdd 
     }).then(function(response){
         console.log(taskToAdd);
-        
         getTasks();
     }).catch(function(error){
         console.log('error in add funk' , error)
@@ -50,6 +49,7 @@ function getTasks(){
             method:'PUT',
             url: '/task/taskDone/' + taskId
         }).then(function(response){
+            console.log('complete');
             getTasks();
         }).catch(function(error){
             console.log('error', error);
