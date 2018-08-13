@@ -13,7 +13,7 @@ tc.listofTasks = [];
 //ADD TASK FUNCTION 
 tc.addTask = function(taskToAdd){
     consoe.log('in add funk');
-    console.log('add task' itemToAdd);
+    console.log('add task' , itemToAdd);
     $http({
         method:'POST',
         url:'/task' ,
@@ -31,13 +31,18 @@ tc.addTask = function(taskToAdd){
 function getTasks(){
     console.log('in get funk');
     $http({
-        
-    })
+        method: 'GET' ,
+        url:'/task'
+    }).then(function(response){
+        tc.listofTask = response.data;
+    }).catch(function(error){
+        console.log('error in get funk' , error);
+    });
 }
 
 
 
-
+getTasks();
 
 });
 
