@@ -5,27 +5,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <script src="vendors/angular.min.js"></script>
+    <script src="vendors/angular.min.js"></script> 
+<!-- Angular above and client/styles below -->
     <script src="scripts/client.js"></script>
     <link rel="stylesheet" source="styles/styles.css">
     <title>Weekend Challenge #3</title>
 </head>
-
+<header> Angular working? {{ 1 === 1 }} </header>
 
 <body >
-        <header> Sourced docs {{ 1 === 1}} </header>
+      
     <h1> Task List:</h1>
 
 
     <div id="container" ng-controller="taskController as tc">
-        <form>
-            <input model="tc.taskIn" placeholder="What task needs to be done?">
+        <form ng-submit="tc.addTask(tc.taskToAdd)">
+            <input ng-model="tc.taskIn" placeholder="What task needs to be done?"/>
             <button id="submit-btn" type="submit">Submit</button>
         </form>
 
 
 
-        <div class="secondContainer">
+        <!-- <div class="secondContainer">
             <ul id="taskList">
                 <li ng-class="task in tc.listofTasks" ng-class="task.complete ? 'completed' : 'incomplete' ">
                     <input type="checkbox" ng-checked="task.complete" ng-click="tc.taskcomplete(task._id)" />
@@ -34,7 +35,7 @@
             </ul>
 
 
-        </div>
+        </div> -->
 
 
 
