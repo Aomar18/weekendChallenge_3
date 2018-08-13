@@ -20,8 +20,10 @@
 
     <div id="container" ng-controller="taskController as tc">
         <form ng-submit="tc.addTask(tc.taskToAdd)">
-            <p>Enter Task:</p>
-            <p> press complete if task is done.. press remove if task unwanted.</p>
+            <h3><p>Enter Task:</p></h3>
+            <p> press complete if task is done..
+                 <br>
+                press remove if task unwanted..</p>
             <input type="text" ng-model="tc.taskToAdd.taskIn" placeholder="What task needs to be done?" />
             <button id="submit-btn" type="submit">Submit</button>
         </form>
