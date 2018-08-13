@@ -15,7 +15,7 @@ router.post('/', (req, res) => {
     let taskFromClient = req.body;
 
     //create new instance of schema
-    const taskToAdd = new taskSchema(taskFromClient);
+    const taskToAdd = new TaskSchema(taskFromClient);
     console.log('in router post:', taskToAdd);
     //send data to database
     taskToAdd.save().then(() => {
@@ -27,6 +27,15 @@ router.post('/', (req, res) => {
     });
 });// end post route
 
+//GET FUNCTION
+router.get('/', (req, res) => {
+    console.log('in GET HIT');
+    taskList.find({}).then((foundtaskList) => {
+        res.send(foundtaskList);
+    }).catch((error) => {
+        res.sendStatus(500);
+    });
+});//end GET
 
 
 module.exports = router;

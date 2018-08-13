@@ -2,15 +2,18 @@
 const express = require('express');
 const app = express();
 const bodyParser = require('body-parser');
+
 const PORT = process.env.PORT || 5000;
+
 const taskRouter = require('./routes/taskrouter.js');
+
 const mongoose = require('mongoose');
 const mongoURI = 'mongodb://localhost:27017/taskdb';
 
 
 //uses
 app.use(bodyParser.json()); // AngularJS
-app.use('/tasks', taskRouter);
+app.use('/task', taskRouter);
 app.use(express.static('server/public'));
 
 // CONNECT TO MONGO

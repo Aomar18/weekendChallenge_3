@@ -1,6 +1,5 @@
 console.log('js');
 
-
 //INITIALIZE APP 
 const toDoApp =  angular.module('taskController' , [] );
 
