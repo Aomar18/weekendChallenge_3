@@ -1,7 +1,7 @@
 console.log('js');
 
 //INITIALIZE APP 
-const toDoApp =  angular.module('taskController' , [] );
+const taskApp =  angular.module('taskController' , [] );
 
 //INITIALIZE CONTROLLER
 taskApp.controller('taskController' , function($http){
@@ -12,13 +12,13 @@ tc.listofTasks = [];
 //ADD TASK FUNCTION 
 tc.addTask = function(taskToAdd){
     consoe.log('in add funk');
-    console.log('add task' , itemToAdd);
+    console.log('add task' , tasktoAdd);
     $http({
         method:'POST',
         url:'/task' ,
-        data:itemToAd
+        data:taskToAdd
     }).then(function(response){
-        console.log(itemToAdd);
+        console.log(taskToAdd);
         getTasks();
     }).catch(function(error){
         console.log('error in add funk' , error)
@@ -30,7 +30,7 @@ tc.addTask = function(taskToAdd){
 function getTasks(){
     console.log('in get funk');
     $http({
-        method: 'GET' ,
+        method:'GET' ,
         url:'/task'
     }).then(function(response){
         tc.listofTask = response.data;
