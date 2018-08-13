@@ -22,6 +22,7 @@ tc.addTask = function(taskToAdd){
     }).then(function(response){
         console.log(taskToAdd);
         getTasks();
+        tc.taskToAdd.taskIn='';
     }).catch(function(error){
         console.log('error in add funk' , error)
         alert('unable to post');
