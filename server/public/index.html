@@ -15,7 +15,7 @@
 
 <body>
 
-    <h1> Task List:</h1>
+    <h1> To Do List:</h1>
 
 
     <div id="container" ng-controller="taskController as tc">
@@ -25,13 +25,14 @@
                  <br>
                 press remove if task unwanted..</p>
             <input type="text" ng-model="tc.taskToAdd.taskIn" placeholder="What task needs to be done?" />
-            <button id="submit-btn" type="submit">Submit</button>
+            <input id="submit-btn" type="submit"/>
         </form>
 
 
 
         <div class="secondContainer">
-            <ul id="list">
+            <ol id="list">
+                <h1>TASKS:</h1>
                 <li ng-repeat="task in tc.listTasks" ng-class="task.taskDone ? 'complete' : 'active'"/>
                 
                     {{task.taskIn}}
@@ -41,7 +42,7 @@
                 </li>
 
 
-            </ul>
+            </ol>
 
 
         </div>

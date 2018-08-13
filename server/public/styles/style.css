@@ -3,6 +3,11 @@ html , body {
     background-color: black;
     color: white;
 }
+h1 {
+    font-family: cursive;
+    text-align: center;
+    color: gold;
+}
 
 p {
     font-family: cursive;
