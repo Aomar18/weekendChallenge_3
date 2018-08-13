@@ -5,37 +5,43 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <script src="vendors/angular.min.js"></script> 
-<!-- Angular above and client/styles below -->
+    <script src="vendors/angular.min.js"></script>
+    <!-- Angular above and client/styles below -->
     <script src="scripts/client.js"></script>
-    <link rel="stylesheet" source="styles/styles.css">
+    <link rel="stylesheet" href="styles/style.css">
     <title>Weekend Challenge #3</title>
 </head>
 <header> Angular working? {{ 1 === 1 }} </header>
 
-<body >
-      
+<body>
+
     <h1> Task List:</h1>
 
 
     <div id="container" ng-controller="taskController as tc">
         <form ng-submit="tc.addTask(tc.taskToAdd)">
-            <input ng-model="tc.taskIn" placeholder="What task needs to be done?"/>
+            <p>Enter Task:</p>
+            <p> checkbox if complete.. press remove if task unwanted.</p>
+            <input type="text" ng-model="tc.taskToAdd.taskIn" placeholder="What task needs to be done?" />
             <button id="submit-btn" type="submit">Submit</button>
         </form>
 
 
 
-        <!-- <div class="secondContainer">
-            <ul id="taskList">
-                <li ng-class="task in tc.listofTasks" ng-class="task.complete ? 'completed' : 'incomplete' ">
-                    <input type="checkbox" ng-checked="task.complete" ng-click="tc.taskcomplete(task._id)" />
-
+        <div class="secondContainer">
+            <ul id="list">
+                <li ng-repeat="task in tc.listTasks" ng-class="task.active ? 'active' : 'complete' ">
+                
+                    {{task.taskIn}}
+                    <button ng-class="task-completed" ng-click="tc.taskDone(task._id)">COMPLETE!</button>
+                    <button ng-class="task-delete" ng-click="tc.removeTask(task._id)">Remove</button>
                 </li>
+
+
             </ul>
 
 
-        </div> -->
+        </div>
 
 
 

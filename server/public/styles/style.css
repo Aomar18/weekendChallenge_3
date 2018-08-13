@@ -1,0 +1,23 @@
+html , body {
+    text-align: center;
+    background-color: black;
+    color: white;
+}
+
+p {
+    font-family: cursive;
+}
+
+li {
+    font-size: 20px;
+    text-align: left;
+    color: green;
+}
+
+.complete {
+    background-color: white;
+}
+
+.active {
+    background-color: red;
+}

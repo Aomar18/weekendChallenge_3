@@ -5,16 +5,16 @@
 [x] Create ng-app
 [x] Create ng-controller
 [x] Create checklist 
-[ ] Create input-model
-[ ] create submit button 
-[ ] POST to the server w/$http  
-[ ] Save to db with mongoose
-[ ] GET route on the server 
-[ ] Client side $http req for data
-[ ] Angular append to DOM
-[ ] Add button to mark complete for each task
+[x] Create input-model
+[x] create submit button 
+[x] POST to the server w/$http  
+[x] Save to db with mongoose
+[x] GET route on the server 
+[x] Client side $http req for data
+[x] Angular append to DOM
+[x] Add button to mark complete for each task
 [ ] PUT update to the server w/$http (send `_id` as route param)
-[ ] Create a route & update mongo with matching `_id`
+[x] Create a route & update mongo with matching `_id`
 [ ] use ng-class to update styling 
 -----------------------------------------
 [ ]

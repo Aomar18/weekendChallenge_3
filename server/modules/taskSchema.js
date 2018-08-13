@@ -1,9 +1,9 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-const TaskSchema = new Schema({
-    initial: { type: String },
-    complete: { type: Boolean, default: false }
+const TasklistSchema = new Schema({
+    taskIn: { type: String } ,
+    taskDone: {type: Boolean}
 });  
 
-module.exports = mongoose.model('List-Tasks', TaskSchema);
+module.exports = mongoose.model('taskList', TasklistSchema);
