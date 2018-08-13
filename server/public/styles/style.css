@@ -1,7 +1,7 @@
 html , body {
     text-align: center;
-    background-color: black;
     color: white;
+    background-image: url("space.jpg");
 }
 h1 {
     font-family: cursive;
@@ -20,7 +20,7 @@ li {
 }
 
 .complete {
-    background-color: white;
+    background-color: transparent;
 }
 
 .active {

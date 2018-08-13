@@ -18,7 +18,7 @@ tc.addTask = function(taskToAdd){
     $http({
         method:'POST',
         url:'/task' ,
-        data: taskToAdd 
+        data: taskToAdd
     }).then(function(response){
         console.log(taskToAdd);
         getTasks();
