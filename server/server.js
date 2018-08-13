@@ -1,41 +1,29 @@
+//requires
 const express = require('express');
-const mongoose = require('mongoose');
 const app = express();
 const bodyParser = require('body-parser');
-const taskRouter = require('./routes/task.router.js');
 const PORT = process.env.PORT || 5000;
-const Schema = mongoose.Schema;
-const TaskSchema = new Schema({
-    name: { type: String }
-});
-const tasks = mongoose.model('tasks', TaskSchema);
+const taskRouter = require('./routes/taskrouter.js');
+const mongoose = require('mongoose');
+const mongoURI = 'mongodb://localhost:27017/taskdb';
 
-//USE
 
-app.use(bodyParser.urlencoded({ extended: true }));
-app.use(bodyParser.json()); //ANGULAR
-
-app.use(express.static('server/public'));
+//uses
+app.use(bodyParser.json()); // AngularJS
 app.use('/tasks', taskRouter);
+app.use(express.static('server/public'));
 
-const mongoURI = 'mongodb://localhost:27017/tasks';
-//CONNECTION
-
+// CONNECT TO MONGO
 mongoose.connect(mongoURI, { useNewUrlParser: true });
 mongoose.connection.on('open', () => {
-    console.log('connected to Mongo');
+    
+    console.log('MONGO INITIALIZD');
 });
 mongoose.connection.on('error', (error) => {
-    console.log('did not connect to Mongo', error);
+    console.log('ERROR', error);
 });
 
-//POST
-
-
-//GET
-
-
-//LISTEN
+// spin up server
 app.listen(PORT, () => {
-    console.log('listening on port', PORT);
-})
+    console.log('server up on:', PORT);
+}) // end spin up server
