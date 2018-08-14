@@ -9,7 +9,7 @@
 
 # Base Mode: #
 
-###Step by step process:###
+### Step by step process: ###
 
 [x] Install (npm, mongo, express, mongoose)
 [x] Source Angular.js and test functionality
