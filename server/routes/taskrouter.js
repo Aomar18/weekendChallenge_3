@@ -41,7 +41,8 @@ router.put('/taskDone/:id', (req, res) =>{
         else if (foundTask.taskDone == false) {
             foundTask.taskDone = true;
         }
-        foundTask.save().then((response) => {
+        foundTask.save().then((modifiedTask) => {
+            console.log("task modified" , modifiedTask);
             res.sendStatus(200);
         }).catch((error) => {
             res.sendStatus(500);
